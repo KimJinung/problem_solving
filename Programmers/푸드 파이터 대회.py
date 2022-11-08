@@ -1,5 +1,4 @@
 def solution(food):
-    answer = ''
     subset_of_answer = ''
 
     for i in range(1, len(food)):
