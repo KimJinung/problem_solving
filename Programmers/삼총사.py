@@ -1,13 +1,9 @@
 from itertools import combinations
 
 
-def solution(number):
-    answer = 0
-    
+def solution(number) -> int:
     number_of_case = list(combinations(number, 3))
+            
+    trio = [case for case in number_of_case if sum(case) == 0]
     
-    for case in number_of_case:
-        if sum(case) == 0: 
-            answer += 1
-    
-    return answer
+    return len(trio)
