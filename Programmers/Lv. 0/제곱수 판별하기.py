@@ -1,5 +1,6 @@
 import math
 
+
 def solution(n):
     value = math.sqrt(n)
 

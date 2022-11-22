@@ -5,5 +5,5 @@ def solution(dot):
         return 2
     elif dot[0] < 0 and dot[1] < 0:
         return 3
-    
+
     return 4
