@@ -3,7 +3,7 @@ name: black
 on: [push, pull_request]
 
 jobs:
-  name: black formatter
+  name: runner / black formatter
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
