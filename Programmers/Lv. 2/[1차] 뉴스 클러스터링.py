@@ -1,6 +1,3 @@
-import re
-
-
 def solution(str1, str2):
     intersection = 0
     union = 0
