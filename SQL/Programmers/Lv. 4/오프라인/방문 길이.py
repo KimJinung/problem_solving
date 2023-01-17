@@ -1,6 +1,4 @@
 def solution(dirs):
-    answer = 0
-
     current_dots = [0, 0]
 
     dots_history_set = set()
