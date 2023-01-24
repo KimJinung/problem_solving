@@ -1,37 +1,33 @@
 """
-오답
+활용할 배열을 미리 만들어두고 풀이하는 방법
+
+반드시 한 번 더 풀어볼 것
 """
-# def solution(n):
-#     answer = [[] for _ in range(n)]
 
-#     size = sum(i for i in range(1, n + 1))
 
-#     snail = []
-#     tmp_snail = []
+def solution(n):
+    snail = []
 
-#     step = n
+    for i in range(1, n + 1):
+        snail.append([0 for _ in range(i)])
 
-#     for num in range(1, size + 1):
-#         tmp_snail.append(num)
+    number = 0
 
-#         if len(tmp_snail) == step:
-#             snail.append(tmp_snail)
-#             tmp_snail = []
-#             step -= 1
+    row, col = -1, 0
 
-#     idx = -1
+    for i in range(n, 0, -3):
+        for _ in range(i):
+            row += 1
+            number += 1
+            snail[row][col] = number
+        for _ in range(i - 1):
+            col += 1
+            number += 1
+            snail[row][col] = number
+        for _ in range(i - 2):
+            row -= 1
+            col -= 1
+            number += 1
+            snail[row][col] = number
 
-#     for direction, subset in enumerate(snail):
-#         if direction % 3 == 0:
-#             for num in subset:
-#                 idx += 1
-#                 answer[idx].insert(-1, num)
-#         elif direction % 3 == 1:
-#             for num in subset:
-#                 answer[idx].insert(-1, num)
-#         elif direction % 3 == 2:
-#             for num in subset:
-#                 idx -= 1
-#                 answer[idx].insert(-1, num)
-
-#     return [num for subset in answer for num in subset]
+    return [num for subset in snail for num in subset]
