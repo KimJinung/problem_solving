@@ -31,6 +31,8 @@ def solution(begin, target, words):
 
             if not answer:
                 answer = result
+            elif result < answer:
+                answer = result
 
     return answer
 
