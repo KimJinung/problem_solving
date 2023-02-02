@@ -26,7 +26,6 @@ def pull(line: int, board: list) -> tuple([int, list]):
         doll = board[idx][line]
 
         if doll != 0:
-
             board[idx][line] = 0
 
             return doll, board
