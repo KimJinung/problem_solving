@@ -15,6 +15,7 @@
 
 아쉬운 점
 - 처음에 정렬을 쓰지 않고 접근하는 방법이 없을까?
+* 힙을 사용한 풀이 추가
 """
 
 
@@ -42,3 +43,28 @@ def solution(n, works):
                         break
 
     return sum(map(lambda x: x**2, works))
+
+
+"""
+힙을 사용한 풀이
+"""
+
+import heapq
+
+
+def solution2(n, works):
+    if sum(works) < n:
+        return 0
+
+    works = list(map(lambda x: -x, works))
+
+    heapq.heapify(works)
+
+    while n != 0:
+        value = heapq.heappop(works)
+
+        heapq.heappush(works, value + 1)
+
+        n -= 1
+
+    return sum(map(lambda x: (-x) ** 2, works))
