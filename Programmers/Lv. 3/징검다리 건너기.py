@@ -1,3 +1,8 @@
+"""
+이진 탐색 연습에 좋은 문제
+"""
+
+
 def solution(stones, k):
     left = 1
     right = 200000000
