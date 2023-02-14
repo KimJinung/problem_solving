@@ -1,9 +1,4 @@
 def solution(sticker):
-    size = len(sticker)
-
-    if size <= 3:
-        return max(sticker)
-
     return max(dp(sticker[:-1]), dp(sticker[1:]))
 
 
