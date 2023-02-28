@@ -15,8 +15,9 @@ def solution(x, y, n):
         if not discoverd.get(num):
             discoverd[num] = True
 
-            for next_num in [num + n, num * 2, num * 3]:
+            for next_num in [num * 3, num * 2, num + n]:
                 if next_num <= y:
                     Q.append((next_num, depth + 1))
+                        
 
     return -1
