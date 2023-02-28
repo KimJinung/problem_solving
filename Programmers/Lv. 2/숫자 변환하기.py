@@ -18,6 +18,5 @@ def solution(x, y, n):
             for next_num in [num * 3, num * 2, num + n]:
                 if next_num <= y:
                     Q.append((next_num, depth + 1))
-                        
 
     return -1
