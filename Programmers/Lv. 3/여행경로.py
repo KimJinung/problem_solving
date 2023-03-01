@@ -49,12 +49,10 @@ def solution(tickets):
 
         last_airport = route[-1]
 
-        stack = graph[last_airport]
+        for next_airport in graph[last_airport]:
+            if ticket_history[(last_airport, next_airport)]:
+                updated_ticket_history = ticket_history.copy()
 
-        for next_airport in stack:
-            updated_ticket_history = ticket_history.copy()
-
-            if updated_ticket_history[(last_airport, next_airport)]:
                 updated_ticket_history[(last_airport, next_airport)] -= 1
 
                 _recursive_dfs(
