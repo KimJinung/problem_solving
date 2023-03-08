@@ -50,10 +50,10 @@ def solution(n, s, a, b, fares):
 
         sub_distance_history = _dijkstra(node)
 
-        value_of_a = sub_distance_history[a]
-        value_of_b = sub_distance_history[b]
+        weight_to_a = sub_distance_history[a]
+        weight_to_b = sub_distance_history[b]
 
-        result = weight + value_of_a + value_of_b
+        result = weight + weight_to_a + weight_to_b
 
         if result < answer:
             answer = result
