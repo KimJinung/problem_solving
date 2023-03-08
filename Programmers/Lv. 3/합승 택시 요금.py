@@ -45,10 +45,10 @@ def solution(n, s, a, b, fares):
     distance_history = _dijkstra(s)
 
     for node, weight in distance_history.items():
-        sub_weight_history = _dijkstra(node)
+        sub_distance_history = _dijkstra(node)
 
-        value_of_a = sub_weight_history[a]
-        value_of_b = sub_weight_history[b]
+        value_of_a = sub_distance_history[a]
+        value_of_b = sub_distance_history[b]
 
         result = weight + value_of_a + value_of_b
 
