@@ -45,6 +45,9 @@ def solution(n, s, a, b, fares):
     distance_history = _dijkstra(s)
 
     for node, weight in distance_history.items():
+        if weight > answer:
+            continue
+
         sub_distance_history = _dijkstra(node)
 
         value_of_a = sub_distance_history[a]
