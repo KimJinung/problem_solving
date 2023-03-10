@@ -58,10 +58,7 @@ def bfs(load) -> (list, list):
 
         is_possible = False
 
-        if load[row][col] == "@":
-            load[row][col] = fee
-            is_possible = True
-        elif fee <= load[row][col]:
+        if load[row][col] == "@" or fee <= load[row][col]:
             load[row][col] = fee
             is_possible = True
         elif remaind_chance:
