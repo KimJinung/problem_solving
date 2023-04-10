@@ -3,11 +3,7 @@
 - 2차원 배열에서 상, 하, 좌, 우로 연결되어 있는 각 그룹의 인자 합
 
 사용할 알고리즘
-- Depth First Search
-
-아이디어
-- 2차원 배열을 순회하면서 DFS를 재귀적으로 태운다.
-- 각 결과를 별도로 저장한다.
+- Stack(DFS)
 """
 
 
@@ -35,7 +31,7 @@ def solution(maps):
 
                 maps[x][y] = "X"
 
-                for dx, dy in get_all_directions_dots(x, y):
+                for dx, dy in get_coordinate_of_all_directions(x, y):
                     if 0 <= dx < row_size and 0 <= dy < col_size:
                         stack.append([dx, dy])
 
@@ -53,5 +49,5 @@ def solution(maps):
     return [-1]
 
 
-def get_all_directions_dots(x, y):
+def get_coordinate_of_all_directions(x, y):
     return [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]]
